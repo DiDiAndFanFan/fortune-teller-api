@@ -1,28 +1,36 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fortune Teller API</title>
-</head>
-<body>
-    <h1>Welcome to the Fortune Teller API</h1>
-    <p>Click the button below to get your prediction!</p>
-    <button onclick="getPrediction()">Get My Fortune</button>
-    <p id="prediction"></p>
-
-    <script>
-        function getPrediction() {
-            const predictions = [
-                "You will have an exciting opportunity next week!",
-                "Someone from your past will reach out to you.",
-                "A big surprise is on its way!",
-                "You will discover a hidden talent."
-            ];
-            const randomIndex = Math.floor(Math.random() * predictions.length);
-            document.getElementById('prediction').innerText = predictions[randomIndex];
-        }
-    </script>
-</body>
-</html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fortune Teller</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Welcome to the Fortune Teller</h1>
+        <p>Type in your name below and see what the future holds for you!</p>
+        <form id="fortune-form">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name" required>
+            <button type="submit">Tell My Fortune</button>
+        </form>
+        <p id="fortune-output"></p>
+        <script>
+            document.getElementById('fortune-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const name = document.getElementById('name').value;
+                const fortunes = [
+                    `${name}, you will have a day full of surprises!`,
+                    `${name}, great opportunities are coming your way.`,
+                    `${name}, be cautious today and trust your instincts.`,
+                    `${name}, an unexpected journey awaits you.`,
+                    `${name}, a friend will bring you good news soon.`
+                ];
+                const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+                document.getElementById('fortune-output').textContent = randomFortune;
+            });
+        </script>
+    </body>
+    </html>
+    
