@@ -11,24 +11,43 @@
         <h1>Welcome to the Fortune Teller</h1>
         <p>Type in your name below and see what the future holds for you!</p>
         <form id="fortune-form">
-            <label for="name">Enter your name:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="name">Enter your name: </label>
+            <input type="text" id="name" required>
             <button type="submit">Tell My Fortune</button>
         </form>
-        <p id="fortune-output"></p>
+        <p id="fortune-result"></p>
         <script>
             document.getElementById('fortune-form').addEventListener('submit', function(event) {
                 event.preventDefault();
                 const name = document.getElementById('name').value;
                 const fortunes = [
-                    `${name}, you will have a day full of surprises!`,
-                    `${name}, great opportunities are coming your way.`,
-                    `${name}, be cautious today and trust your instincts.`,
-                    `${name}, an unexpected journey awaits you.`,
-                    `${name}, a friend will bring you good news soon.`
+                    "a friend will bring you good news soon.",
+                    "you will discover a hidden talent.",
+                    "an exciting adventure is waiting for you.",
+                    "unexpected wealth is coming your way.",
+                    "a long-forgotten memory will resurface.",
+                    "you will meet someone who changes your life.",
+                    "happiness will find you in unexpected places.",
+                    "a creative idea will bring you success.",
+                    "you will reconnect with an old friend.",
+                    "a mystery will soon be revealed to you.",
+                    "luck will follow you in the coming days.",
+                    "a small act of kindness will change your day.",
+                    "you will overcome a challenge with ease.",
+                    "a surprise gift is on its way to you.",
+                    "a new hobby will bring you joy.",
+                    "you will make someone smile today.",
+                    "a journey will bring you closer to your dreams.",
+                    "you will receive a compliment that brightens your day.",
+                    "an opportunity will knock on your door soon.",
+                    "you will inspire someone with your words.",
+                    "a secret wish will come true.",
+                    "you will find peace in a quiet moment.",
+                    "your hard work will pay off soon.",
+                    "a positive change is coming your way."
                 ];
                 const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-                document.getElementById('fortune-output').textContent = randomFortune;
+                document.getElementById('fortune-result').textContent = `${name}, ${randomFortune}`;
             });
         </script>
     </body>
