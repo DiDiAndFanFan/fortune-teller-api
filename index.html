@@ -1,55 +1,84 @@
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fortune Teller</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Welcome to the Fortune Teller</h1>
-        <p>Type in your name below and see what the future holds for you!</p>
-        <form id="fortune-form">
-            <label for="name">Enter your name: </label>
-            <input type="text" id="name" required>
-            <button type="submit">Tell My Fortune</button>
-        </form>
-        <p id="fortune-result"></p>
-        <script>
-            document.getElementById('fortune-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                const name = document.getElementById('name').value;
-                const fortunes = [
-                    "a friend will bring you good news soon.",
-                    "you will discover a hidden talent.",
-                    "an exciting adventure is waiting for you.",
-                    "unexpected wealth is coming your way.",
-                    "a long-forgotten memory will resurface.",
-                    "you will meet someone who changes your life.",
-                    "happiness will find you in unexpected places.",
-                    "a creative idea will bring you success.",
-                    "you will reconnect with an old friend.",
-                    "a mystery will soon be revealed to you.",
-                    "luck will follow you in the coming days.",
-                    "a small act of kindness will change your day.",
-                    "you will overcome a challenge with ease.",
-                    "a surprise gift is on its way to you.",
-                    "a new hobby will bring you joy.",
-                    "you will make someone smile today.",
-                    "a journey will bring you closer to your dreams.",
-                    "you will receive a compliment that brightens your day.",
-                    "an opportunity will knock on your door soon.",
-                    "you will inspire someone with your words.",
-                    "a secret wish will come true.",
-                    "you will find peace in a quiet moment.",
-                    "your hard work will pay off soon.",
-                    "a positive change is coming your way."
-                ];
-                const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-                document.getElementById('fortune-result').textContent = `${name}, ${randomFortune}`;
-            });
-        </script>
-    </body>
-    </html>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Teller</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        #fortune {
+            font-size: 1.5em;
+            color: #333;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3700b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Fortune Teller</h1>
+    <p>Click the button below to reveal your fortune!</p>
+    <div id="fortune">Your fortune will appear here...</div>
+    <button onclick="tellFortune()">Tell My Fortune</button>
+
+    <script>
+        function tellFortune() {
+            const fortunes = [
+                // 趣味哲学类
+                "人生如梦，别总是纠结于昨天的细节。",
+                "你的决定并不一定会改变世界，但它会改变你的世界。",
+                "小小的改变，往往会带来意想不到的大转折。",
+                "你寻找的答案，其实就在你的心里。",
+                "世界上最值得追寻的，是你真正渴望的东西。",
+                "你今天的问题，不妨让时间来回答。",
+                "偶尔迷茫，是找到新方向的前奏。",
+                "选择的每条路，都是命运为你铺好的。",
+                "你相信的，终将成为现实。",
+                "活在当下，未来自会安排好一切。",
+
+                // 梦境解析类
+                "如果你梦见天空，那代表你的潜意识正渴望自由。",
+                "梦见自己在水中，是一种精神净化的象征。",
+                "梦里的楼梯，暗示你正面对人生的上升或转折。",
+                "如果梦见一扇门，意味着新的机会即将到来。",
+                "梦见自己飞翔，代表你的心灵已突破束缚。",
+                "梦见掉牙齿，是重生的象征，预示新阶段的开始。",
+                "如果梦里有一片森林，象征着自我探索的旅程。",
+                "梦见光芒四射的太阳，你正迎接全新的能量。",
+                "反复出现的梦，是潜意识在向你传递信息。",
+                "如果梦见镜子，暗示你正在审视自己的内心世界。",
+
+                // 超自然现象类
+                "今天可能会有一次超自然体验，注意身边的细节！",
+                "小心午夜时分的风声，那可能不是风。",
+                "你的守护灵正在悄悄保护你。",
+                "你今天会感受到‘déjà vu’般的奇异体验。",
+                "夜晚的影子也许会比白天更有故事。",
+                "你可能会在意想不到的地方看到‘数字密码’。",
+                "一位来自过去的灵魂在试图传递信息。",
+                "时间正在你身边轻微扭曲，仔细感受它。",
+                "如果今天灯闪了三次，那是某种特殊的信号。",
+                "你的直觉比你想象中更准确，听从它的指引。"
+            ];
+            const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+            document.getElementById('fortune').textContent = randomFortune;
+        }
+    </script>
+</body>
+</html>
