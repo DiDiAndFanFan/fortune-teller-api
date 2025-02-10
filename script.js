@@ -1,49 +1,17 @@
 
-document.getElementById("fortune-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const name = document.getElementById("name").value;
-    const category = document.getElementById("category").value;
-
+document.getElementById('tell-fortune').addEventListener('click', function() {
+    const name = document.getElementById('name').value;
+    const category = document.getElementById('category').value;
     const fortunes = {
-        "General Fortune": [
-            "Today is a lucky day for you!",
-            "Expect a pleasant surprise in your near future.",
-            "A new opportunity will knock on your door soon."
-        ],
-        "Love Life": [
-            "Love is just around the corner.",
-            "A romantic gesture will warm your heart.",
-            "Someone special is thinking of you right now."
-        ],
-        "Career": [
-            "A big career move is coming your way.",
-            "Your hard work will soon pay off.",
-            "A new project will bring unexpected success."
-        ],
-        "Health": [
-            "A healthy lifestyle change will benefit you.",
-            "Your energy levels will be higher than usual.",
-            "Focus on balance and wellness."
-        ],
-        "Philosophy": [
-            "The answer lies within you.",
-            "Seek wisdom, and you shall find it.",
-            "Every journey begins with a single step."
-        ],
-        "Dream Interpretation": [
-            "A dream will reveal an important message.",
-            "Your subconscious is guiding you.",
-            "Dreams are the whispers of your soul."
-        ],
-        "Supernatural Events": [
-            "You may experience déjà vu today.",
-            "A mysterious coincidence will make you smile.",
-            "Trust your intuition—it’s sharper than ever."
-        ]
+        general: ["You will have a lucky day!", "An unexpected surprise awaits you.", "Today is the start of something new."],
+        love: ["Love is in the air!", "A romantic encounter will brighten your day.", "Your heart will find what it seeks."],
+        career: ["A new opportunity is on the horizon.", "Your hard work will pay off soon.", "Success is within reach."],
+        health: ["Take time to rest and recharge.", "Good health and happiness are coming your way.", "A balanced diet brings a balanced life."],
+        philosophy: ["Life is a journey, not a destination.", "The answer lies within you.", "Embrace the unknown with courage."],
+        dreams: ["Your dreams hold hidden messages.", "A recent dream will come true.", "Pay attention to your intuition."],
+        supernatural: ["You will experience a déjà vu moment.", "A mysterious event will leave you amazed.", "The universe is aligning in your favor."]
     };
-
-    const selectedFortunes = fortunes[category];
-    const randomFortune = selectedFortunes[Math.floor(Math.random() * selectedFortunes.length)];
-
-    document.getElementById("fortune-result").textContent = `${name}, ${randomFortune}`;
+    const fortuneList = fortunes[category];
+    const randomFortune = fortuneList[Math.floor(Math.random() * fortuneList.length)];
+    document.getElementById('fortune').innerText = `${name}, ${randomFortune}`;
 });
