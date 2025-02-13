@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Teller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to the Fortune Teller</h1>
+    <p>Enter your name:</p>
+    <input type="text" id="name" placeholder="Your Name">
+    <p>Choose a category:</p>
+    <select id="category">
+        <option value="general">General Fortune</option>
+        <option value="love">Love Life</option>
+        <option value="career">Career</option>
+        <option value="health">Health</option>
+        <option value="philosophy">Philosophy</option>
+        <option value="dreams">Dream Interpretation</option>
+        <option value="supernatural">Supernatural Events</option>
+        <option value="travel">Travel</option>
+        <option value="friendship">Friendship</option>
+        <option value="family">Family</option>
+    </select>
+    <br><br>
+    <button id="tell-fortune">Tell My Fortune</button>
+    <p id="fortune">Your fortune will appear here...</p>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
